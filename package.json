@@ -1,34 +1,80 @@
 {
-  "name": "story-game",
-  "version": "0.1.0",
-  "private": true,
+  "name": "react-hooks-template",
+  "version": "1.0.3",
+  "description": "Template to create up to date React App",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --mode=development --hot",
+    "dev": "npm run start",
+    "build": "webpack --mode=production",
+    "format": "prettier --write \"src/**/*.js\"",
+    "lint": "eslint --fix . && echo 'Lint complete.'",
+    "eslint-check": "eslint --print-config . | eslint-config-prettier-check",
+    "test": "jest --coverage --passWithNoTests",
+    "test:watch": "npm test -- --watch"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run format"
+    }
+  },
+  "author": "Liam Hanrahan",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:liamthanrahan/react-hooks-template.git"
+  },
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
+    "@babel/polyfill": "^7.10.4",
+    "@emotion/core": "^10.0.28",
+    "@emotion/styled": "^10.0.27",
+    "@hot-loader/react-dom": "^16.13.0",
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/styles": "^4.10.0",
+    "copy-webpack-plugin": "^6.0.3",
+    "emotion": "^10.0.27",
+    "get-root": "0.0.3",
+    "html-webpack-plugin": "^3.2.0",
+    "html-webpack-template": "^6.2.0",
+    "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
+    "react-hot-loader": "^4.12.21",
+    "react-icons": "^3.10.0",
+    "react-motion": "^0.5.2",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "reselect": "^4.0.0",
+    "uglifyjs-webpack-plugin": "^2.2.0"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "devDependencies": {
+    "@babel/core": "^7.10.4",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/preset-react": "^7.10.4",
+    "@babel/register": "^7.10.4",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^26.1.0",
+    "babel-loader": "^8.1.0",
+    "eslint": "^7.4.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-jest-enzyme": "^7.1.2",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-babel": "^5.3.1",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jest": "^23.18.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.3",
+    "eslint-plugin-react-hooks": "^4.0.8",
+    "husky": "^4.2.5",
+    "jest": "^26.1.0",
+    "prettier": "^2.0.5",
+    "react-test-renderer": "^16.13.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
   }
 }
