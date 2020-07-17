@@ -1,7 +1,7 @@
 {
-  "name": "react-hooks-template",
+  "name": "story-game",
   "version": "1.0.3",
-  "description": "Template to create up to date React App",
+  "description": "Practice react app that creates a collaborative story",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --mode=development --hot",
@@ -22,7 +22,7 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git@github.com:liamthanrahan/react-hooks-template.git"
+    "url": "git@github.com:liamthanrahan/story-game.git"
   },
   "dependencies": {
     "@babel/polyfill": "^7.10.4",

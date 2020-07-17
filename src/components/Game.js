@@ -30,27 +30,58 @@ class Game extends Component {
     this.state = {
       history: [],
       partNumber: 0,
+      updateText: '',
     }
   }
 
   addNewStoryPart = part => {
     const { history, partNumber } = this.state
-    const storyLog = history.slice(0, partNumber + 1)
+    const storyLog = history.slice()
+    storyLog[partNumber] = part
     this.setState({
-      history: storyLog.concat(part),
+      history: storyLog,
       partNumber: storyLog.length,
     })
   }
 
-  render() {
+  editPart = partNumber => {
     const { history } = this.state
+    this.setState({
+      updateText: history[partNumber],
+      partNumber,
+    })
+  }
+
+  clearFollowing = partNumber => {
+    const { history } = this.state
+    const storyLog = history.slice(0, partNumber)
+    this.setState({
+      history: storyLog,
+      partNumber: storyLog.length,
+    })
+  }
+
+  resetStory = () => {
+    this.setState({ history: [], partNumber: 0 })
+  }
+
+  render() {
+    const { history, updateText } = this.state
     return (
       <Container>
         <LogSection>
-          <StoryLog log={history} />
+          <StoryLog
+            log={history}
+            editPart={this.editPart}
+            clearFollowing={this.clearFollowing}
+          />
         </LogSection>
         <Section>
-          <StoryInput submit={this.addNewStoryPart} />
+          <StoryInput
+            updateText={updateText}
+            submit={this.addNewStoryPart}
+            reset={this.resetStory}
+          />
         </Section>
       </Container>
     )

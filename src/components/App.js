@@ -19,12 +19,14 @@ const Top = styled.header`
   display: flex;
   flex-direction: column;
   margin: 0 10px;
-  align-items: center;
+  align-items: stretch;
 `
 
 const Heading = styled.h1`
-  margin-right: 10px;
+  text-align: center;
 `
+
+const Description = styled.div``
 
 const Bottom = styled.div`
   flex: 1;
@@ -58,6 +60,21 @@ function App() {
     <Container>
       <Top>
         <Heading>Story Game</Heading>
+        <Divider />
+        <Description>
+          <h2>Rules</h2>
+          <ul>
+            <li>Play with one or more of your friends.</li>
+            <li>
+              Take turns entering a new sentence or paragraph to create a
+              collaborative story.
+            </li>
+            <li>
+              When you are finished type &quot;the end&quot; to finish your
+              story.
+            </li>
+          </ul>
+        </Description>
       </Top>
       <Divider />
       <Bottom>
